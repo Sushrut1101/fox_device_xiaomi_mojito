@@ -178,3 +178,9 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit Prebuilt Vendor Images
 #include vendor/xiaomi/mojito-vendor/BoardConfig.mk
+
+# Android 11 Based Miui 12.x Decryption Support
+BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
+    --prop com.android.build.boot.os_version:$(PLATFORM_VERSION) \
+    --prop com.android.build.boot.security_patch:$(PLATFORM_SECURITY_PATCH)
+#
