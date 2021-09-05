@@ -40,37 +40,9 @@ AB_OTA_PARTITIONS := \
     vbmeta_system \
     vendor_boot
 
-# Audio
-USE_CUSTOM_AUDIO_POLICY := 1
-USE_XML_AUDIO_POLICY_CONF := 1
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mojito
 TARGET_NO_BOOTLOADER := true
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
-TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
-TARGET_USE_QTI_BT_STACK := true
-
-# Camera
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
-# Display
-TARGET_SCREEN_DENSITY := 440
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
-# FM
-BOARD_HAS_QCA_FM_SOC := "cherokee"
-BOARD_HAVE_QCOM_FM := true
-
-# Graphics
-TARGET_USES_DRM_PP := true
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_HWC2 := true
-TARGET_USES_ION := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -148,20 +120,8 @@ BOARD_USES_QCOM_HARDWARE := true
 # Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-#TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.default
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
-
-# RenderScript
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
-# RIL
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-
-# SELinux
-#include device/qcom/sepolicy/SEPolicy.mk
-#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -172,12 +132,6 @@ BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
-
-# Inherit from the proprietary version
-#include vendor/xiaomi/mojito/BoardConfigVendor.mk
-
-# Inherit Prebuilt Vendor Images
-#include vendor/xiaomi/mojito-vendor/BoardConfig.mk
 
 # Android 11 Based Miui 12.x Decryption Support
 BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
