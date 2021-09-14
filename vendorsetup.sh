@@ -89,6 +89,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# Run a Process after Formatting Data to Work-Around MTP Issues
 	export OF_RUN_POST_FORMAT_PROCESS=1
+	
+	# Put the OrangeFox ZIP Installer in the Debug Mode
+	export FOX_INSTALLER_DEBUG_MODE=1
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
